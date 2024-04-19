@@ -52,12 +52,27 @@ public class grappler : MonoBehaviour
             distance.enabled = false;
             line.enabled = false;
         }
+
         if (distance.enabled)
         {
+            Debug.Log("Heyo");
             // update when end of the line to follow grapple start pos
             line.SetPosition(0, grappleStartPos.transform.position);
+
+            //calculate direction vector from joint to end of line
+            Vector2 direction = (Vector2)line.GetPosition(1) - (Vector2)grappleStartPos.transform.position;
+
+            //calculate force based on direction and desired strength
+            float pullStrength = 10f; // adjust this value for desired pulling force
+            Vector2 force = direction * pullStrength;
+
+
+            var targetBodyToMove = GetComponent<FixedJoint2D>().connectedBody.GetComponent<Rigidbody2D>();
+            targetBodyToMove.AddForce(force);
+
         }
 
 
     }
+
 }

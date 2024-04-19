@@ -182,7 +182,7 @@ MonoBehaviour:
   anim: {fileID: 27376153}
   rb2D: {fileID: 1519686139}
   jumpForce: 2500
-  playerSpeed: 50
+  playerSpeed: 70
   jumpHeight: {x: 0, y: 0}
   isGrounded: 0
   posRadius: 0
@@ -2754,6 +2754,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1988145130}
   - component: {fileID: 1988145131}
+  - component: {fileID: 1988145133}
+  - component: {fileID: 1988145132}
   m_Layer: 0
   m_Name: GrapplePoint
   m_TagString: Untagged
@@ -2792,6 +2794,53 @@ MonoBehaviour:
   line: {fileID: 1404571316}
   distance: {fileID: 1404571317}
   grappleStartPos: {fileID: 1988145130}
+  rb2D: {fileID: 0}
+--- !u!255 &1988145132
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988145129}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1540962857}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 4.1867123, y: 0.44310912}
+  m_DampingRatio: 0
+  m_Frequency: 0
+--- !u!50 &1988145133
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988145129}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2016409575
 GameObject:
   m_ObjectHideFlags: 0
